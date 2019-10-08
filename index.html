@@ -4,10 +4,15 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-		
+	function setSearchEngine() {
+		console.log("function works!");
+	}
+	
     window.addEventListener("load", function(){
         // TODO: register the handler
-		console.log("got it");
+		document.getElementById("searchForm").addEventListener("submit", setSearchEngine);
+		console.log(document.getElementById("searchForm"));
+		console.log("event listener works!");
     });
 	</script>
 </head>
