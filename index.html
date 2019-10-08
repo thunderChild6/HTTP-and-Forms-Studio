@@ -11,7 +11,7 @@
     window.addEventListener("load", function(){
         // TODO: register the handler
 		document.getElementById("searchForm").addEventListener("submit", setSearchEngine);
-		console.log(document.getElementById("searchForm"));
+		console.log(document.getElementsByName("engine"));
 		console.log("event listener works!");
     });
 	</script>
@@ -19,7 +19,7 @@
 
 <body>
 
-	<form id="searchForm">
+	<form id="searchForm" method="POST">
 	<!-- TODO: add form elements -->
 	<fieldset>
 	<input type="text" name="q"/>
