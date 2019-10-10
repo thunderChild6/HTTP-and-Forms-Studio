@@ -4,14 +4,11 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-	function setSearchEngine(event) {
-		console.log("function reached!");
-		// if (document.querySelector("input[name=engine]:checked") === null) {
-		// 	alert("Please select a search engine");
-		// 	event.preventDefault();
-		// }
-		// let searchEngine = document.querySelector("input[name=engine]:checked").value;
-		// console.log(searchEngine);
+		function setSearchEngine(event) {
+			let searchEngine = document.querySelector("input[name=engine]:checked").value;
+			console.log("search engine", searchEngine);
+			console.log("action", actions[searchEngine]);
+			searchForm.setAttribute("action", actions[searchEngine]);
 	};
 
 	let actions = {
@@ -23,9 +20,8 @@
 	
     window.addEventListener("load", function(){
         // TODO: register the handler
-		console.log("LOAD event listener works!");
 		let searchForm = document.getElementById("searchForm");
-		searchForm.addEventListener("submit", setSearchEngine(event));
+		searchForm.addEventListener("submit", setSearchEngine);
     });
 	</script>
 </head>
@@ -34,11 +30,11 @@
 	<form id="searchForm" action="">
 	<fieldset>
 	<input type="text" name="q"/>
-	<label><input type="radio" name="engine" value="Google"/>Google</label>
+	<label><input type="radio" name="engine" value="google"/>Google</label>
 	<label><input type="radio" name="engine" value="duckDuckGo"/>Duck Duck Go</label>
 	<label><input type="radio" name="engine" value="bing"/>Bing</label>
 	<label><input type="radio" name="engine" value="ask"/>Ask</label>
-	<button>Go!</button>
+	<input type="submit" value="Go"/>
 	</fieldset>
 	</form>
 </body>
